@@ -1,0 +1,193 @@
+
+MikeSW4#sh run
+Building configuration...
+
+Current configuration : 2413 bytes
+!
+! Last configuration change at 16:52:55 EET Thu May 28 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname MikeSW4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+clock timezone EET 2 0
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel24
+ switchport mode dynamic desirable
+!
+interface Ethernet0/0
+ switchport access vlan 44
+!
+interface Ethernet0/1
+ switchport access vlan 40
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Ethernet1/0
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Ethernet2/0
+ switchport mode dynamic desirable
+!
+interface Ethernet2/1
+ switchport mode dynamic desirable
+!
+interface Ethernet2/2
+ switchport mode dynamic desirable
+!
+interface Ethernet2/3
+ switchport mode dynamic desirable
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+!
+interface Ethernet4/0
+ switchport mode dynamic desirable
+ channel-group 24 mode desirable
+!
+interface Ethernet4/1
+ switchport mode dynamic desirable
+ channel-group 24 mode desirable
+!
+interface Ethernet4/2
+ switchport mode dynamic desirable
+ channel-group 24 mode desirable
+!
+interface Ethernet4/3
+ switchport mode dynamic desirable
+ channel-group 24 mode desirable
+!
+interface Ethernet5/0
+!
+interface Ethernet5/1
+!
+interface Ethernet5/2
+!
+interface Ethernet5/3
+!
+interface Ethernet6/0
+!
+interface Ethernet6/1
+!
+interface Ethernet6/2
+!
+interface Ethernet6/3
+!
+interface Ethernet7/0
+!
+interface Ethernet7/1
+!
+interface Ethernet7/2
+!
+interface Ethernet7/3
+!
+interface Ethernet8/0
+!
+interface Ethernet8/1
+!
+interface Ethernet8/2
+!
+interface Ethernet8/3
+!
+interface Ethernet9/0
+!
+interface Ethernet9/1
+!
+interface Ethernet9/2
+!
+interface Ethernet9/3
+!
+interface Ethernet10/0
+!
+interface Ethernet10/1
+!
+interface Ethernet10/2
+!
+interface Ethernet10/3
+!
+interface Ethernet11/0
+!
+interface Ethernet11/1
+!
+interface Ethernet11/2
+!
+interface Ethernet11/3
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 500 0
+ password academy
+ logging synchronous
+ length 0
+ history size 1
+line aux 0
+line vty 0 4
+!
+!
+end
+
